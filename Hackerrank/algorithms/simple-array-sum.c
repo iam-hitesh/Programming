@@ -7,7 +7,11 @@
 #include <stdbool.h>
 
 int simpleArraySum(int n, int ar_size, int* ar) {
-    // Complete this function
+	int sum;
+   for(int n = 0;n<ar_size;n++){
+       sum += ar[n];
+   }
+    return sum;
 }
 
 int main() {
