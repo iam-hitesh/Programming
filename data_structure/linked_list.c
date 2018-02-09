@@ -7,27 +7,27 @@ typedef struct list{
   struct list * next;
 }list;
 
-int createList(int n);
-void display(list *head);
+list * createList(int n);
+void display(list * head);
 
 int main(){
   int n;
-  list *HEAD = NULL;
-  
   scanf("%d",&n);
 
+  list * head = NULL;
 
-  HEAD = createList(n);
-  display(HEAD);
+  
+  head = createList(n);
+  display(head);
 }
 
-int createList(int n){
+list * createList(int n){
   list * head = NULL;
   list * temp = NULL;
   list * p = NULL;
 
   for(int i  = 0;i<n;i++){
-    temp = (list*)malloc(sizeof(struct list));
+    temp = (list * )malloc(sizeof(struct list));
     scanf("%d\n",&(temp->data));
     temp->next = NULL;
 
@@ -45,7 +45,7 @@ int createList(int n){
 }
 
 void display(list * head){
-  list *p = head;
+  list * p = head;
   while(p != NULL){
     printf("%d\n",p->data);
     p = p->next;
