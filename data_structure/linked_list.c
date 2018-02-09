@@ -1,20 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int createList(int n);
-void display(list * head);
 
 typedef struct list{
   int data;
   struct list * next;
 }list;
 
+int createList(int n);
+void display(list *head);
 
 int main(){
   int n;
+  list *HEAD = NULL;
+  
   scanf("%d",&n);
 
-  list * HEAD = NULL;
 
   HEAD = createList(n);
   display(HEAD);
@@ -44,7 +45,7 @@ int createList(int n){
 }
 
 void display(list * head){
-  p = head;
+  list *p = head;
   while(p != NULL){
     printf("%d\n",p->data);
     p = p->next;
