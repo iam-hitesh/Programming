@@ -1,23 +1,25 @@
 #include<iostream>
-#include<string>
 #include<stack>
+#include<string>
 
 using namespace std;
 
-bool ArePair(char opening,char closing){
-  if(opening == '(' && closing == ')') return true;
-  else if(opening == '{' && closing == '}') return true;
+bool isCheck(char opening,char closing){
+  if(opening == '{' && closing == '}') return true;
+  else if(opening == '(' && closing == ')') return true;
   else if(opening == '[' && closing == ']') return true;
   else return false;
 }
 
-bool balancing(string s){
+bool isBalanced(string exp){
+
   stack<char> S;
-  for(int i = 0;i<s.length();i++){
-    if(s[i] == '(' || s[i] == '{' || s[i] == '['){
-      S.push(s[i]);
-    }else if(s[i] == ')' || s[i] == '}' || s[i] == ']'){
-      if(S.empty() || !ArePair(S.top(),s[i])){
+
+  for(int i = 0;i<exp.length();i++){
+    if(exp[i] == '(' || exp[i] == '[' || exp[i] == '{'){
+      S.push(exp[i]);
+    }else if(exp[i] == ')' || exp[i] == ']' || exp[i] == '}'){
+      if(S.empty() || !isCheck(S.top(),exp[i])){
         return false;
       }else{
         S.pop();
@@ -28,11 +30,9 @@ bool balancing(string s){
 }
 
 int main(){
-  string s;
-  cout<<"Enter a Expression";
-  cin>>s;
-
-  if(balancing(s)){
+  string exp;
+  cin>>exp;
+  if(isBalanced(exp)){
     cout<<"Balanced";
   }else{
     cout<<"Not Balanced";
