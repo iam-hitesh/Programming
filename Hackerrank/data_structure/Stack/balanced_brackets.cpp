@@ -1,42 +1,45 @@
 #include<iostream>
-#include<stack>
 #include<string>
+#include<stack>
 
 using namespace std;
 
-bool isCheck(char opening,char closing){
-    if(opening == '{' && closing == '}') return true;
-    else if(opening == '(' && closing == ')') return true;
-    else if(opening == '[' && closing == ']') return true;
-    else return false;
+// o = opening bracket
+// c = closing bracket
+
+bool isCheck(char o,char c){
+  if(o == '{' && c == '}') return true;
+  else if(o == '(' && c == ')') return true;
+  else if(o == '[' && c == ']') return true;
+  else return false;
 }
 
 bool isBalanced(string exp){
-    stack<char> S;
-    for(int i = 0;i<exp.length();i++){
-        if(exp[i] == '(' || exp[i] == '[' || exp[i] == '{'){
-            S.push(exp[i]);
-        }else if(exp[i] == ')' || exp[i] == ']' || exp[i] == '}'){
-            if(S.empty() || !isCheck(S.top(),exp[i])){
-                return false;
-        }else{
-                S.pop();
-            }
-        }
+  stack<char> st;
+  for(int i = 0;i<exp.length();i++){
+    if(exp[i] == '(' || exp[i] == '[' || exp[i] == '{'){
+      st.push(exp[i]);
+    }else if(exp[i] == '}' || exp[i] == ']' || exp[i] == ')'){
+      if(st.empty() || !isCheck(st.top(),exp[i])){
+        return false;
+      }else{
+          st.pop();
+      }
     }
-    return S.empty() ? true:false;
+  }
+  return st.empty()? true:false;
 }
 
 int main(){
-    int test;
-    cin>>test;
-    for(int i = 0;i<test;i++){
-        string exp;
-        cin>>exp;
-        if(isBalanced(exp)){
-            cout<<"YES \n";
-        }else{
-            cout<<"NO \n";
-        }
+  int test;
+  cin>>test;
+  for(int i = 0;i<test;i++){
+    string exp;
+    cin>>exp;
+    if(isBalanced(exp)){
+      cout<<"YES \n";
+    }else{
+      cout<<"NO \n";
     }
+  }
 }
