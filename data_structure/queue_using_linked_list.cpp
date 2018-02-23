@@ -35,6 +35,14 @@ void dequeue(){
   free(temp);
 }
 
+bool isEmpty(){
+  if(front == NULL && rear == NULL){
+    cout<<"List is Empty \n";
+  }else{
+    cout<<"List is Not Empty \n";
+  }
+}
+
 int Front(){
   if(front == NULL){
     cout<<"List is Empty";
@@ -53,19 +61,21 @@ int Print(){
 }
 
 int main(){
-            enqueue(2); 
-            cout <<"After Enqueue ";
-            Print();
-	enqueue(4); 
-	cout <<"After Enqueue ";
-	Print();
-	enqueue(6); 
-	cout <<"After Enqueue ";
-	Print();
-	dequeue();  
-	cout <<"After Dequeue ";
-	Print();
-	enqueue(8); 
-	cout <<"After Enqueue ";
-	Print();
+  isEmpty();
+  enqueue(2);
+  cout <<"After Enqueue ";
+  Print();
+  enqueue(4);
+  cout <<"After Enqueue ";
+  Print();
+  enqueue(6);
+  cout <<"After Enqueue ";
+  Print();
+  dequeue();
+  cout <<"After Dequeue ";
+  Print();
+  enqueue(8);
+  cout <<"After Enqueue ";
+  Print();
+  isEmpty();
 }
