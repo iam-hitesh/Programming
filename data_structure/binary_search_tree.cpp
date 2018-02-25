@@ -6,54 +6,68 @@ struct Node{
   int data;
   struct Node * left;
   struct Node * right;
-};
+}Node;
 
-struct Node * NewNode(int data){
-  struct Node * newNode = new Node();
-  newNode->data = data;
-  newNode->left = NULL;
-  newNode->right = NULL;
-  return newNode;
+struct Node * newNode(int data){
+  struct Node * temp = (struct Node *)malloc(sizeof(struct Node));
+  temp->data = data;
+  temp->left = NULL;
+  temp->right = NULL;
+  return temp;
 }
 
-struct Node * Insert(struct Node * root,int data){
+struct Node * insert(struct Node * root,int data){
   if(root == NULL){
-    root = NewNode(data);
-    return root;
-  }else if(data <= root->data){
-    root->left = Insert(root->left,data);
+    root = newNode(data);
+  }else if(data >= root->data){
+    root->right = insert(root->right,data);
   }else{
-    root->right = Insert(root->right,data);
+    root->left = insert(root->left,data);
   }
   return root;
 }
 
-bool Search(struct Node * root,int search){
+bool search(struct Node * root,int data){
   if(root == NULL){
     return false;
-  }else if(root->data == search){
+  }else if(root->data == data){
     return true;
-  }else if(search <= root->data){
-    return Search(root->left,search);
+  }else if(data >= root->data){
+    return search(root->right,data);
   }else{
-    return Search(root->right,search);
+    return search(root->left,data);
   }
 }
 
 int main(){
   struct Node * root = NULL;
-  root = Insert(root,15);
-  root = Insert(root,10);
-  root = Insert(root,20);
-  root = Insert(root,8);
-  root = Insert(root,90);
-  root = Insert(root,120);
-  root = Insert(root,2);
+  root = insert(root,3);
+  root = insert(root,20);
+  root = insert(root,14);
+  root = insert(root,120);
+  root = insert(root,27);
+  root = insert(root,73);
+  root = insert(root,84);
+  root = insert(root,92);
+  root = insert(root,22);
+  root = insert(root,10);
+  root = insert(root,203);
+  root = insert(root,293);
+  root = insert(root,291);
+  root = insert(root,34783);
+  root = insert(root,9430);
+  root = insert(root,201);
+  root = insert(root,122);
+  root = insert(root,120);
+  root = insert(root,14);
+  root = insert(root,73);
+  root = insert(root,3203);
+  root = insert(root,3202);
 
-  int search;
-  cout<<"Enter Number to Search";
-  cin>>search;
-  if(Search(root,search) == true){
+  int find;
+
+  cin>>find;
+  if(search(root,find) == true){
     cout<<"Found";
   }else{
     cout<<"Not Found";
