@@ -1,6 +1,6 @@
 # Programming
 
-## This project is for adding your programming problems solutions in various programming languages on different programming platforms.
+#### This project is for adding your programming problems solutions in various programming languages on different programming platforms.
 
 It contain codes for various Online Judge - CodeChef,Hackerearth,Codeforce, Spoj, HackerRank,etc.
 
