@@ -2,21 +2,19 @@
 
 using namespace std;
 
-struct Node{
+typedef struct Node{
   int data;
-  struct Node * left;
-  struct Node * right;
-}Node;
+  struct Node * left = NULL;
+  struct Node * right = NULL;
+}node;
 
-struct Node * newNode(int data){
-  struct Node * temp = (struct Node *)malloc(sizeof(struct Node));
+node * newNode(int data){
+  node * temp = new node;
   temp->data = data;
-  temp->left = NULL;
-  temp->right = NULL;
   return temp;
 }
 
-struct Node * insert(struct Node * root,int data){
+node * insert(node * root,int data){
   if(root == NULL){
     root = newNode(data);
   }else if(data >= root->data){
@@ -27,7 +25,7 @@ struct Node * insert(struct Node * root,int data){
   return root;
 }
 
-bool search(struct Node * root,int data){
+bool search(node * root,int data){
   if(root == NULL){
     return false;
   }else if(root->data == data){
@@ -40,7 +38,7 @@ bool search(struct Node * root,int data){
 }
 
 int main(){
-  struct Node * root = NULL;
+  node * root = NULL;
   root = insert(root,3);
   root = insert(root,20);
   root = insert(root,14);
