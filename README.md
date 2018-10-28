@@ -10,6 +10,14 @@ Note : Please do not misuse these codes. You will only be cheating yourself. Thi
 
 #### Note : Those who add more than 5 Programs in this repository, I will add their name as contributor here.
 
+### Contributors'
+
+| Name        | Profile           | Contributions  |
+| ------------- |:-------------:| -----:|
+| Sudhanshu      | [Github Profile](https://github.com/Capreyon) | Kruskal algorithm, bellman_ford algorithm, dijkstra, dfs, iterative bfs, Graph implementation |
+
+* If you think you made enough commits to be in contributors' list and I didn't add you than add your name in readme file and send PR.
+
 ## Instructions-
 
 - Fork this repository using the button at the top
