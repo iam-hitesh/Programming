@@ -8,6 +8,8 @@ The files are named according to the problem's name. You can find links to the p
 
 Note : Please do not misuse these codes. You will only be cheating yourself. This repository can be used for reference.
 
+#### Note : Those who add more than 5 Programs in this repository, I will add their name as contributor here.
+
 ## Instructions-
 
 - Fork this repository using the button at the top
@@ -26,3 +28,6 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 ## An awesome resource to learn Git
 https://learngitbranching.js.org/
+
+## Learn C, C++, Python, Java Here
+https://www.programiz.com/c-programming
