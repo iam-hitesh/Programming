@@ -17,6 +17,9 @@ Note : Please do not misuse these codes. You will only be cheating yourself. Thi
 | Name        | Profile           | Contributions  |
 | ------------- |:-------------:| -----:|
 | Sudhanshu      | [Github Profile](https://github.com/Capreyon) | Kruskal algorithm, bellman_ford algorithm, dijkstra, dfs, iterative bfs, Graph implementation |
+| Chandra Vamsi      | [Github Profile](https://github.com/rchandravamsi14) | tree sort, cycle sort, shell sort, pigeon sort, heap sort |
+| Vikash Kumar Yadav     | [Github Profile](https://github.com/geekfreak97) | quick sort, merge sort, insertion sort, counting sort, bucket sort |
+
 
 * If you think you made enough commits to be in contributors' list and I didn't add you than add your name in readme file and send PR.
 
