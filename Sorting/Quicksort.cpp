@@ -23,6 +23,7 @@ int main()
 	cout << "\n\n The array after sorting is : ";
 	show(a,n);
 
-	return 0;
+	return 0;. :p
 
 }
+// dont use library.. code your self please....couldnt under stand :p
