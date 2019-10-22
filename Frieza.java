@@ -49,26 +49,22 @@ public class CAKEWALK
            int count=1;
            int j=0;
            for(int i=1;i<str.length();i++)
-           {
                if(arr[str.charAt(i)-'a']==arr[str.charAt(i-1)-'a'])
-               {
                    count++;
-               }
+             
                else
                {
                    ans[j]=count;
                    count=1;
                    j++;
                }
-           }
+           
            ans[j]=count;
 
            for(int i=0;i<ans.length;i++)
            {
                if(ans[i]==0)
-               {
                    break;
-               }
                System.out.print(ans[i]);
            }
            System.out.println();
